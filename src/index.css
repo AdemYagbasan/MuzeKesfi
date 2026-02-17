@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #d97706;
+  --color-surface: #1c1917;
+}
+
+/* Custom Scrollbar */
+@utility scrollbar-hide {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@utility mask-fade-right {
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+body {
+  background-color: #1c1917;
+  color: #e7e5e4;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  background: #1c1917 !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(41, 37, 36, 0.95) !important;
+  color: #e7e5e4 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 0 !important;
+  border-radius: 12px !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(41, 37, 36, 0.95) !important;
+}
+
+.leaflet-popup-close-button {
+  color: #a8a29e !important;
+}
+
+/* Custom Tooltip Styling */
+.custom-tooltip {
+  background: rgba(28, 25, 23, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fbbf24 !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  white-space: nowrap !important;
+}
+
+.custom-tooltip::before {
+  border-top-color: rgba(28, 25, 23, 0.8) !important;
+}
+
+/* Card Styles */
+.culture-card {
+  background: #292524;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.culture-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(217, 119, 6, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.card-highlight {
+  border-color: #d97706 !important;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
